@@ -4,22 +4,28 @@
 
 # Hint: You can check if a string is contained within another string using the 'in' operator.
 
-###
-# Prints employees employed in a specified position.
-#
-
-# Employee List
+# Nazwa pliku, który zawiera dane o pracownikach
 file_name = 'it_company.csv'
 
-# Position
+# Tytuł stanowiska, który chcemy znaleźć
 job_title = 'Software Engineer'
 
+# Otwieramy plik w trybie do odczytu
 with open(file_name, "r") as file:
+   # Odczytujemy zawartość pliku
    content = file.read()
+
+   # Dzielimy zawartość pliku na linie
    file_lines = content.splitlines()
+
+   # Zmienna 'number' będzie numerować pracowników
    number = 1
   
+   # Iterujemy po każdej linii w pliku
    for line in file_lines:
+      # Sprawdzamy, czy tytuł stanowiska "Software Engineer" jest w danej linii
       if job_title in line:
+        # Jeśli tak, drukujemy numer i linię (informacje o pracowniku)
         print(f"{number}. {line}")
-        number+=1
+        # Zwiększamy numer o 1 dla kolejnego pracownika
+        number += 1

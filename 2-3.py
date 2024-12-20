@@ -6,14 +6,20 @@
 # Makes a copy of a text file
 #
 
-# file names
-original_file = 'healthy_lifestyle.txt'
-target_file = 'copy_healthy_lifestyle.txt'
+# Program do kopiowania zawartości pliku 'healthy_lifestyle.txt' do pliku 'copy_healthy_lifestyle.txt'
 
-# read the content of the original file
+# Nazwy plików
+original_file = 'healthy_lifestyle.txt'  # Plik źródłowy, z którego kopiujemy
+target_file = 'copy_healthy_lifestyle.txt'  # Plik docelowy, do którego zapisujemy kopię
+
+# Otwieramy plik źródłowy w trybie odczytu ('r')
 with open(original_file, "r") as original:
+    # Odczytujemy całą zawartość pliku i zapisujemy ją w zmiennej 'content'
     content = original.read()
 
-# write the content to the target file (copy)
+# Otwieramy plik docelowy w trybie zapisu ('w')
 with open(target_file, "w") as target:
-   target.write(content)
+    # Zapisujemy zawartość z pliku źródłowego do pliku docelowego
+    target.write(content)
+
+# Program zakończony. Zawartość pliku 'healthy_lifestyle.txt' została skopiowana do 'copy_healthy_lifestyle.txt'
